@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Specify the path to the .xlsx file
-FILE_PATH = "AlumniList.xlsx"
+FILE_PATH = "AlumniListFinal.xlsx"
 
 @st.cache_data
 def load_data():
