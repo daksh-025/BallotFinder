@@ -10,18 +10,18 @@ def load_data():
     return pd.read_excel(FILE_PATH, header=None)
 
 # Title of the app
-st.title("Find Ballot No by Name or Mobile No")
+st.title("Find Membership ID by Name or Mobile No")
 
 try:
     # Load the data
     data = load_data()
 
     # Input fields for name or mobile number
-    st.write("Enter either a name or a mobile number to find the corresponding Ballot No.")
+    st.write("Enter either a name or a mobile number to find the corresponding Membership ID")
     name = st.text_input("Name:")
     mobile_no = st.text_input("Mobile No:")
 
-    if st.button("Find Ballot No"):
+    if st.button("Find Membership ID"):
         if name or mobile_no:
             # Access columns by position
             ballot_column_index = 0  # A corresponds to index 0 (Ballot No)
@@ -36,7 +36,7 @@ try:
 
             if not filtered_data.empty:
                 ballot_no = filtered_data.iloc[0, ballot_column_index]  # Get the value from column A
-                st.success(f"The corresponding Ballot No is: {ballot_no}")
+                st.success(f"The corresponding Membership ID is: {ballot_no}")
             else:
                 st.error("No Ballot No found for the entered Name or Mobile No.")
         else:
