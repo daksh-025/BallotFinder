@@ -17,9 +17,12 @@ try:
     data = load_data()
 
     # Input fields for name or mobile number
-    st.write("Enter either a name or a mobile number to find the corresponding Membership ID")
-    name = st.text_input("Name:")
-    mobile_no = st.text_input("Mobile No:")
+    st.write("Enter either a Registered Name or a  Registered mobile number to find the corresponding Membership ID")
+    name = st.text_input("Registered Name:")
+     # Display "OR" in bold between the input fields
+    st.markdown("**OR**")
+    
+    mobile_no = st.text_input("Regsitered Mobile No:")
 
     if st.button("Find Membership ID"):
         if name or mobile_no:
@@ -41,6 +44,8 @@ try:
                 st.error("No Ballot No found for the entered Name or Mobile No.")
         else:
             st.warning("Please enter either a Name or a Mobile No.")
+    st.markdown("#### If membership ID not found, please verify physically.")
+
 except FileNotFoundError:
     st.error(f"The file at '{FILE_PATH}' was not found. Please check the path and try again.")
 except Exception as e:
