@@ -41,7 +41,7 @@ try:
                 ballot_no = filtered_data.iloc[0, ballot_column_index]  # Get the value from column A
                 st.success(f"The corresponding Membership ID is: {ballot_no}")
             else:
-                st.error("No Ballot No found for the entered Name or Mobile No.")
+                st.error("No Membership ID found for the entered Name or Mobile No.")
         else:
             st.warning("Please enter either a Name or a Mobile No.")
     st.markdown("#### If membership ID not found, please verify physically.")
