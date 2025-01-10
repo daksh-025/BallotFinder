@@ -10,7 +10,7 @@ def load_data():
     return pd.read_excel(FILE_PATH, header=None)
 
 # Title of the app
-st.title("Find Membership ID by Name or Mobile No")
+st.title("Find DBS Alumni membership ID by Registered Name or Registered Mobile No")
 
 try:
     # Load the data
